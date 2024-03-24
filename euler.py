@@ -15,7 +15,7 @@ def edo_euler(f, x0, y0, b, n):
 
     return xs, ys
 
-def edo_euler_modificado(f, x0, y0, b, n):
+def edo_euler_melhorado(f, x0, y0, b, n):
     x = x0
     y = y0
     h = (b - x0) / n
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     dydx = lambda x, y: y*(x**2) - (y**2)*x
 
     xs, ys = edo_euler(dydx, x0, y0, b, n)
-    xs2, ys2 = edo_euler_modificado(dydx, x0, y0, b, n)
+    xs2, ys2 = edo_euler_melhorado(dydx, x0, y0, b, n)
     xs3, ys3 = edo_runge_kutta(dydx, x0, y0, b, n)
 
     f, ax = plt.subplots(1)
